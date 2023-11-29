@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Addresses</title>
+    <meta http-equiv="Content-Type" content="text/html ; charset=UTF-8" />
+    <link th:replace="fragments :: bootstrap" />
+</head>
+<body>
+
+<navbar th:replace="fragments :: navbar"></navbar>
+
+<h1>Rechercher une adresse</h1>
+<form action="/meteo" method="POST">
+    <div>
+        <label for="address">Please input your adress :</label>
+        <input name="address" id="address">
+    </div>
+    <div>
+        <button>Get the weather at the given address !</button>
+    </div>
+</form >
+
+</body>
+</html>
