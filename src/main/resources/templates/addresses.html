@@ -4,10 +4,11 @@
   <title>Addresses</title>
   <meta http-equiv="Content-Type" content="text/html ; charset=UTF-8" />
   <link th:replace="fragments :: bootstrap" />
+  <link th:replace="fragments :: stylesheet"/>
 </head>
 <body>
 
-<navbar th:replace="fragments :: navbar"></navbar>
+<div th:replace="fragments :: navbar"></div>
 
 <h1>Les differentes adresses</h1>
 <ul th:each="address:${allAddresses}">

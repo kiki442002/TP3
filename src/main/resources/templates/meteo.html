@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Meteo</title>
+    <link th:replace="fragments :: bootstrap" />
+    <link th:replace="fragments :: stylesheet" />
 </head>
 <body>
-<div th:text="${address}"></div>
+<div th:replace="fragments :: navbar"></div>
+
+<div class = "meteoDay" th:each="forecast:${Allforecast}">
+    <div class = "day" th:if="${forecast.day == 0}">
+        <h2>Aujourd'hui</h2>
+    </div>
+    <div class = "day" th:if="${forecast.day == 1}">
+        <h2>Demain</h2>
+    </div>
+    <div class = "day" th:if="${forecast.day > 1}">
+        <h2 th:text="${'Jour '+forecast.day}"></h2>
+    </div>
+
+</div>
 </body>
 </html>
