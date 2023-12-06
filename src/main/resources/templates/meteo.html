@@ -8,18 +8,57 @@
 </head>
 <body>
 <div th:replace="fragments :: navbar"></div>
+<h1>Meteo</h1>
+<br>
+<div id="meteo">
+    <div class = "meteoDay" th:each="forecast:${Allforecast}">
+        <div class = "day" th:if="${forecast.day == 0}">
+            <h2>Aujourd'hui</h2>
+        </div>
+        <div class = "day" th:if="${forecast.day == 1}">
+            <h2>Demain</h2>
+        </div>
+        <div class = "day" th:if="${forecast.day > 1}">
+            <h2 th:text="${'Jour +'+forecast.day}"></h2>
+        </div>
 
-<div class = "meteoDay" th:each="forecast:${Allforecast}">
-    <div class = "day" th:if="${forecast.day == 0}">
-        <h2>Aujourd'hui</h2>
-    </div>
-    <div class = "day" th:if="${forecast.day == 1}">
-        <h2>Demain</h2>
-    </div>
-    <div class = "day" th:if="${forecast.day > 1}">
-        <h2 th:text="${'Jour '+forecast.day}"></h2>
-    </div>
+        <div class="meteoIcon" th:if="${forecast.weather == 0 || forecast.weather == 1}">
+            <img th:src="@{img/soleil.png}" alt="icon">
+        </div>
+        <div class="meteoIcon" th:if="${forecast.weather == 2 || forecast.weather == 3}">
+            <img th:src="@{img/nuageux.png}" alt="icon">
+        </div>
+        <div class="meteoIcon" th:if="${forecast.weather >= 4 &&  forecast.weather <= 7}">
+            <img th:src="@{img/nuage.png}" alt="icon">
+        </div>
+        <div class="meteoIcon" th:if="${forecast.weather >= 10 &&  forecast.weather <= 78 || forecast.weather>=210 && forecast.weather<=235}">
+            <img th:src="@{img/pluvieux.png}" alt="icon">
+        </div>
+        <div class="meteoIcon" th:if="${forecast.weather >=100  &&  forecast.weather <= 142}">
+            <img th:src="@{img/orage.png}" alt="icon">
+        </div>
 
+
+
+        <div class="meteoInfo">
+            <img th:src="@{img/temperature.png}" alt="icon">
+
+            <div class="meteoData">
+                <div>
+                    Max: <th:block th:text="${forecast.tmax}"/>°C
+                </div>
+                <div>
+                    Min: <th:block th:text="${forecast.tmin}"/>°C
+                </div>
+            </div>
+        </div>
+        <div class="meteoInfo">
+            <img th:src="@{img/vent.png}" alt="icon">
+            <div class="meteoData">
+                <th:block th:text="${forecast.wind10m}"/> km/h
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

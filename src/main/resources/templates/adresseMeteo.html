@@ -13,11 +13,11 @@
 <h1>Trouver la météo à une adresse</h1>
 <form action="/meteo" method="POST">
     <div>
-        <label for="address">Votre adresse :</label> <input name="address" id="address">
-        <label for="day">Nombre de jour: </label> <input type="number" name="day" id="day">
+        <label for="address">Votre adresse :</label> <input required name="address" id="address">
+        <label for="day">Nombre de jour: </label> <input type="number" name="day" id="day" min="0" max="13" value="0">
     </div>
     <div>
-        <button> Suivant</button>
+        <button>Suivant</button>
     </div>
 </form >
 
