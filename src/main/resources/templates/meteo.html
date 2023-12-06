@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meteo</title>
+    <title>Méteo</title>
     <link th:replace="fragments :: bootstrap" />
     <link th:replace="fragments :: stylesheet" />
+    <link th:replace="fragments :: favicon"/>
 </head>
 <body>
 <div th:replace="fragments :: navbar"></div>
-<h1>Meteo</h1>
+<h1>Méteo</h1>
 <br>
 <div id="meteo">
     <div class = "meteoDay" th:each="forecast:${Allforecast}">
