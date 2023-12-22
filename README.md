@@ -1,8 +1,41 @@
 # Github:
+
 https://github.com/kiki442002/TP3
+
 # TP3
 
 ### Etape 5:
+
+#### HIbernate
+
+C'est la dépendance qui permet de faire le lien entre la base de données et l'application via des classes JAVA. C'est la
+couche ORM de l'application, il gére la persitance des données.
+
+#### JPA
+
+JPA est une interface de programmation JAVA qui permet de faire la même chose que Hibernate, mais avec moins de
+fonctionnalités. Hibernate utilise entre autre JPA.
+
+#### H2
+
+H2 est un système de gestion de base de données relationnelle écrit en JAVA. Il est utilisé majoritairement pour les
+tests unitaires ou les petits projets. H2 est une base de données embarquée, c'est à dire qu'elle est intégrée à une
+autre application.
+
+#### DevTools
+
+cette dépandence regroupe des outils qui permettent de faciliter le développement d'une application. Cela peut être pour
+déboguer, inspecter, émuler, modifier le code ou l'état de l'application etc...
+
+#### Thymeleaf
+
+Thymeleaf est un moteur de template JAVA. Il permet de générer des pages HTML à partir de templates. Il est utilisé dans
+notre projet pour faire la vue. Il permet de rendre cette dernière dynamique.
+
+#### Web
+
+Web est une dépendance qui permet de faire une application web. Elle permet de faire le lien entre le controlleur et la
+vue (HTML), ainsi que de participer à la dynamisation du site ou de l'application.
 
 ### Etape 13:
 
